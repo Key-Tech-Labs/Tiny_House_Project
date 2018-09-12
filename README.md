@@ -11,4 +11,3 @@ A repository to hold the code-base used to integrate the Amazon Alexa with the R
 - [Home Assistnat - DHT Sensor](https://www.home-assistant.io/components/sensor.dht/)
 - [Home Assistant - PWM LED Light](https://www.home-assistant.io/components/light.rpi_gpio_pwm/)
 - [GitHub Repo - Alexa/Flask Smart-Home](https://github.com/davidweigao/AlexaSmartHome)
-
