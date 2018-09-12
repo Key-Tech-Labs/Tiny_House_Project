@@ -10,4 +10,3 @@ A repository to hold the code-base used to integrate the Amazon Alexa with the R
 - [Home Assistant - Pi GPIO Switch](https://www.home-assistant.io/components/switch.rpi_gpio/)
 - [Home Assistnat - DHT Sensor](https://www.home-assistant.io/components/sensor.dht/)
 - [Home Assistant - PWM LED Light](https://www.home-assistant.io/components/light.rpi_gpio_pwm/)
-
