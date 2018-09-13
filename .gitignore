@@ -110,3 +110,4 @@ homeassistant/
 
 # Home Assistant config files
 secrets.yaml
+homeassistant_config_backup/.storage
