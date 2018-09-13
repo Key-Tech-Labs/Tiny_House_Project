@@ -109,16 +109,8 @@ homeassistant/
 *.swo
 
 # Home Assistant config files
-homeassistant_config_backup/.storage/auth
-homeassistant_config_backup/.storage/auth_provider.homeassistant
-homeassistant_config_backup/.storage/onboarding
+homeassistant_config_backup/.storage/
 homeassistant_config_backup/.uuid
-/.storage/
 .storage/
-/.storage
-.storage
-.storage/*
-/.storage/*
-!*.yaml
 secrets.yaml
 known_devices.yaml
