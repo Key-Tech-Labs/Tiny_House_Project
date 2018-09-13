@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -109,8 +109,8 @@ homeassistant/
 *.swo
 
 # Home Assistant config files
+homeassistant_config_backup/*
+/homeassistant_config_backup/*
+!*.yaml
 secrets.yaml
-auth
-auth_provider.homeassistant
-onboarding
-.uuid
+known_devices.yaml
