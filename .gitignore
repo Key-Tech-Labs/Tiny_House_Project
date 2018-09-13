@@ -110,4 +110,7 @@ homeassistant/
 
 # Home Assistant config files
 secrets.yaml
-homeassistant_config_backup/.storage/*
+auth
+auth_provider.homeassistant
+onboarding
+.uuid
