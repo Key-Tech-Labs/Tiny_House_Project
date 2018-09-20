@@ -23,6 +23,7 @@ Before we get started, let's review the list of items we'll need:
 - [Home Assistnat - DHT Sensor](https://www.home-assistant.io/components/sensor.dht/)
 - [Home Assistant - PWM LED Light](https://www.home-assistant.io/components/light.rpi_gpio_pwm/)
 - [GitHub Repo - Alexa/Flask Smart-Home](https://github.com/davidweigao/AlexaSmartHome)
+- [ThePiHut - LED to GPIO Tutorial](https://thepihut.com/blogs/raspberry-pi-tutorials/27968772-turning-on-an-led-with-your-raspberry-pis-gpio-pins)
 
 ## Credits
 
