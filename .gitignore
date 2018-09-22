@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -89,6 +89,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+homeassistant/
 
 # Spyder project settings
 .spyderproject
@@ -106,3 +107,10 @@ venv.bak/
 # VIM
 *.swp
 *.swo
+
+# Home Assistant config files
+homeassistant_config_backup/.storage/
+homeassistant_config_backup/.uuid
+.storage/
+secrets.yaml
+known_devices.yaml
