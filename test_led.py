@@ -11,6 +11,8 @@ GPIO.setwarnings(False)
 GPIO.setup(18, GPIO.OUT)
 
 hello_world = 'Hello World'
+
+# Dict that holds morse code
 morse_code = ['....', '.', '.-..', '.-..', '---', ' ', '.--', '---', '.-.', '.-..', '-..']
 
 for idx, letter in enumerate(hello_world):
