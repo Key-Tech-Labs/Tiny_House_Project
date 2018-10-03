@@ -52,7 +52,8 @@ morse_code = {
         '.': '.-.-.-',
         ',': '--..--',
         '?': '..--..',
-        '\'': '.----.'
+        '\'': '.----.',
+        ' ': ' '
         }
 
 
@@ -75,9 +76,12 @@ def speak_morse_code(message):
     """Function which uses the LED light connected to the Raspberry Pi to speak
     (flash) and print the Morse Code translation of the given string."""
 
-    for idx, letter in enumerate(message):
-        print(morse_code[idx], letter)
-        for signal in morse_code[idx]:
+    for letter in message:
+
+        signal_key = letter.lower()
+        print(letter, morse_code[signal_key])
+
+        for signal in morse_code[signal_key]:
             if signal == ' ':
                 time.sleep(0.8)
                 break
