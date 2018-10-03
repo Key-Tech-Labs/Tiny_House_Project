@@ -58,8 +58,9 @@ morse_code = {
 
 def parse_message(message):
     """Function used to validate given string before passing it to the
-    speak_morse_code function. Removes case-sensitivity and most forms of
-    punctuation."""
+    speak_morse_code function. Returns new string void of all characters that
+    are not a-z, A-Z, 0-9, or punctuation marks outside of commas, periods,
+    apostrophes, and question marks."""
 
     newly_parsed_message = []
 
