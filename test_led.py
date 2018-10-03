@@ -59,8 +59,8 @@ morse_code = {
 
 def parse_message(message):
     """Function used to validate given string before passing it to the
-    speak_morse_code function. Returns new string void of all characters that
-    are not a-z, A-Z, 0-9, or punctuation marks outside of commas, periods,
+    translate_to_morse_code function. Returns new string void of all characters
+    that are not a-z, A-Z, 0-9, or punctuation marks outside of commas, periods,
     apostrophes, and question marks."""
 
     newly_parsed_message = []
@@ -69,7 +69,16 @@ def parse_message(message):
         if letter.isalpha() or letter.isdigit() or letter in '.,?\' ':
             newly_parsed_message.append(letter)
 
+    print("""Message has been parsed successfully! Preparing to translate
+            message and broadcast Morse Code now...""")
+
     return ''.join(newly_parsed_message)
+
+
+def translate_to_morse_code(message):
+    """Function that translates parsed user string to it's proper Morse Code
+    equivalent. Returns new string of Morse Code in the form of dots and
+    dashes."""
 
 
 def speak_morse_code(message):
