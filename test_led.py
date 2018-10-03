@@ -2,8 +2,6 @@
 
 import RPi.GPIO as GPIO
 import time
-import sys
-
 
 # Configuration for RPi GPIO
 
@@ -60,8 +58,8 @@ morse_code = {
 def parse_message(message):
     """Function used to validate given string before passing it to the
     translate_to_morse_code function. Returns new string void of all characters
-    that are not a-z, A-Z, 0-9, or punctuation marks outside of commas, periods,
-    apostrophes, and question marks."""
+    that are not a-z, A-Z, 0-9, or punctuation marks outside of commas,
+    periods, apostrophes, and question marks."""
 
     newly_parsed_message = []
 
@@ -77,8 +75,8 @@ def parse_message(message):
 
 def translate_to_morse_code(message):
     """Function that translates parsed user string to it's proper Morse Code
-    equivalent. Returns new string of Morse Code in the form of dots and
-    dashes."""
+    equivalent before passing it to the speak_morse_code function. Returns new
+    string of Morse Code in the form of dots and dashes."""
 
 
 def speak_morse_code(message):
@@ -106,6 +104,9 @@ def speak_morse_code(message):
 
 if __name__ == '__main__':
 
-    unparsed_message = sys.argv[1]
+    unparsed_message = input("""Please type the message that you'd like to say
+                                in Morse Code: """)
     parsed_message = parse_message(unparsed_message)
-    speak_morse_code(parsed_message)
+    translated_message = translate_to_morse_code(parsed_message)
+
+    speak_morse_code(translated_message)
