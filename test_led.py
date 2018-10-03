@@ -51,11 +51,24 @@ morse_code = {
         '0': '-----',
         '.': '.-.-.-',
         ',': '--..--',
-        '?': '..--..'
+        '?': '..--..',
+        '\'': '.----.'
         }
 
+
 def parse_message(message):
-    """Function used to validate given string."""
+    """Function used to validate given string before passing it to the
+    speak_morse_code function. Removes case-sensitivity and most forms of
+    punctuation."""
+
+    newly_parsed_message = []
+
+    for letter in message:
+        if letter.isalpha() or letter.isdigit() or letter in '.,?\' ':
+            newly_parsed_message.append(letter)
+
+    return ''.join(newly_parsed_message)
+
 
 def speak_morse_code(message):
     """Function which uses the LED light connected to the Raspberry Pi to speak
@@ -75,6 +88,7 @@ def speak_morse_code(message):
             GPIO.output(18, GPIO.LOW)
             time.sleep(0.2)
         time.sleep(0.6)
+
 
 if __name__ == '__main__':
 
