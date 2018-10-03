@@ -80,7 +80,7 @@ def speak_morse_code(message):
     for letter in message:
 
         signal_key = letter.lower()
-        print(letter, morse_code[signal_key])
+        print(letter, 'in morse code is', morse_code[signal_key])
 
         for signal in morse_code[signal_key]:
             if signal == ' ':
@@ -97,8 +97,8 @@ def speak_morse_code(message):
 
 
 if __name__ == '__main__':
-
     unparsed_message = input("""Please type the message that you'd like to say
                                 in Morse Code: """)
+
     parsed_message = parse_message(unparsed_message)
     speak_morse_code(parsed_message)
