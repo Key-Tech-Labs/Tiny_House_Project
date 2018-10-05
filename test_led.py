@@ -3,29 +3,102 @@
 import RPi.GPIO as GPIO
 import time
 
-
 # Configuration for RPi GPIO
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(18, GPIO.OUT)
 
-hello_world = 'Hello World'
-morse_code = ['....', '.', '.-..', '.-..', '---', ' ', '.--', '---', '.-.', '.-..', '-..']
+# Dict that holds morse code
+morse_code = {
+        'a': '.-',
+        'b': '-...',
+        'c': '-.-.',
+        'd': '-..',
+        'e': '.',
+        'f': '..-.',
+        'g': '--.',
+        'h': '....',
+        'i': '..',
+        'j': '.---',
+        'k': '-.-',
+        'l': '.-..',
+        'm': '--',
+        'n': '-.',
+        'o': '---',
+        'p': '.--.',
+        'q': '--.-',
+        'r': '.-.',
+        's': '...',
+        't': '-',
+        'u': '..-',
+        'v': '...-',
+        'w': '.--',
+        'x': '-..-',
+        'y': '-.--',
+        'z': '--..',
+        '1': '.----',
+        '2': '..---',
+        '3': '...--',
+        '4': '....-',
+        '5': '.....',
+        '6': '-....',
+        '7': '--...',
+        '8': '---..',
+        '9': '----.',
+        '0': '-----',
+        '.': '.-.-.-',
+        ',': '--..--',
+        '?': '..--..',
+        '\'': '.----.',
+        ' ': ' '
+        }
 
-for idx, letter in enumerate(hello_world):
-    print(morse_code[idx], letter)
-    for signal in morse_code[idx]:
-        if signal == ' ':
-            time.sleep(0.8)
-            break
-        GPIO.output(18, GPIO.HIGH)
-        if signal == '.':
+
+def parse_message(message):
+    """Function used to validate given string before passing it to the
+    speak_morse_code function. Returns new string void of all characters
+    that are not a-z, A-Z, 0-9, or punctuation marks outside of commas,
+    periods, apostrophes, and question marks."""
+
+    newly_parsed_message = []
+
+    for letter in message:
+        if letter.isalpha() or letter.isdigit() or letter in '.,?\' ':
+            newly_parsed_message.append(letter)
+
+    print("""Message has been parsed successfully! Preparing to translate
+            message and broadcast Morse Code now...""")
+
+    return ''.join(newly_parsed_message)
+
+
+def speak_morse_code(message):
+    """Function which uses the LED light connected to the Raspberry Pi to speak
+    (flash) and print the Morse Code translation of the given string."""
+
+    for letter in message:
+
+        signal_key = letter.lower()
+        print(letter, 'in morse code is', morse_code[signal_key])
+
+        for signal in morse_code[signal_key]:
+            if signal == ' ':
+                time.sleep(0.8)
+                break
+            GPIO.output(18, GPIO.HIGH)
+            if signal == '.':
+                time.sleep(0.2)
+            else:
+                time.sleep(0.6)
+            GPIO.output(18, GPIO.LOW)
             time.sleep(0.2)
-        else:
-            time.sleep(0.6)
-        GPIO.output(18, GPIO.LOW)
-        time.sleep(0.2)
-    time.sleep(0.6)
+        time.sleep(0.6)
 
-print('Hello World!')
+
+if __name__ == '__main__':
+    unparsed_message = input("""Please type the message that you'd like to say
+                                in Morse Code: """)
+
+    parsed_message = parse_message(unparsed_message)
+    speak_morse_code(parsed_message)
