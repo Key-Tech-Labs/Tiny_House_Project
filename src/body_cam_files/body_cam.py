@@ -6,7 +6,8 @@ from time import sleep
 camera = PiCamera()
 
 camera.start_preview()
-sleep(10)
-camera.capture('/home/pi/Desktop/rpi_camera_test.jpg')
+camera.start_recording('/home/pi/Desktop/rpi_recording_test.h264')
+sleep(5)
+camera.stop_recording()
 camera.stop_preview()
 
