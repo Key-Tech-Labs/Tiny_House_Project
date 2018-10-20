@@ -25,6 +25,7 @@ Before we get started, let's review the list of items we'll need:
 - [GitHub Repo - Alexa/Flask Smart-Home](https://github.com/davidweigao/AlexaSmartHome)
 - [ThePiHut - LED to GPIO Tutorial](https://thepihut.com/blogs/raspberry-pi-tutorials/27968772-turning-on-an-led-with-your-raspberry-pis-gpio-pins)
 - [Security Camera Setup](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
+- [PIR Motion Sensor Setup](https://pimylifeup.com/raspberry-pi-motion-sensor/)
 
 ## Credits
 
