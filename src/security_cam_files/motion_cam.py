@@ -3,6 +3,7 @@
 import RPi.GPIO as GPIO
 from picamera import PiCamera
 from time import sleep, asctime
+# TODO: get gmail smtp client setup and email upon motion detect
 
 pir_sensor = 11
 current_state = 0
